@@ -8,8 +8,8 @@ namespace mc
 {
 
 MarchingCube::MarchingCube(const Accessor& _acc, const iVec3& _dim, const Vec3& _origin,
-                           const Vec3& _gridsize, int _boundary_way, double _isovalue)
-: acc(_acc), dim(_dim), gridsize(_gridsize), boudary_way(_boundary_way), isovalue(_isovalue), origin(_origin)
+                           const Vec3& _gridsize, double _isovalue)
+: acc(_acc), dim(_dim), gridsize(_gridsize), isovalue(_isovalue), origin(_origin)
 {}
 
 size_t globalid_edge(size_t i, size_t j, size_t k, 

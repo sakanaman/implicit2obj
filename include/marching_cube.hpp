@@ -46,7 +46,7 @@ class MarchingCube
 {
 public:
     MarchingCube(const Accessor& _acc, const iVec3& _dim, const Vec3& _origin,
-                 const Vec3& _gridsize, int _boundary_way, double isovalue);
+                 const Vec3& _gridsize, double isovalue);
     void compute();
     void write_obj(const std::string& filename) const;
 private:
@@ -54,7 +54,6 @@ private:
     iVec3 dim;
     Vec3 origin;
     Vec3 gridsize;
-    int boudary_way;
     double isovalue;
     Mesh meshdata;
 };

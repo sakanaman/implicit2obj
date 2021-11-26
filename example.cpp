@@ -23,7 +23,7 @@ int main()
         return imp(x, y, z);
     };
 
-    mc::MarchingCube march(acc, dim, origin, gridsize, 0, isovalue);
+    mc::MarchingCube march(acc, dim, origin, gridsize, isovalue);
     march.compute();
     march.write_obj("output.obj");
 }

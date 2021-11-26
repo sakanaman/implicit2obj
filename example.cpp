@@ -4,7 +4,6 @@ int main()
 {
     double isovalue = 0.0;
     double radius = 0.3;
-    int boundary_way = 10; //適当
     mc::Vec3 gridsize{0.02, 0.02, 0.02};
     mc::Vec3 origin{-1.0, -1.0, -1.0};
     mc::iVec3 dim{100, 100, 100};

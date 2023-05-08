@@ -148,7 +148,24 @@ void MarchingCube::compute()
                         // calculate coefficient of interpolation
                         double phi0 = std::abs(data[end0] - isovalue);
                         double phi1 = std::abs(data[end1] - isovalue);
-                        double alpha = phi0 / (phi0 + phi1);
+                        double alpha;
+                        if(phi0 + phi1 > 1e-12)
+                        {
+                            alpha = phi0 / (phi0 + phi1);
+                        }
+                        else
+                        {
+                            alpha = 0.5;
+                        }
+
+                        if (alpha < 0.000001) 
+                        {
+                            alpha = 0.000001;
+                        }
+                        if (alpha > 0.999999) 
+                        {
+                            alpha = 0.999999;
+                        }
 
 
                         double pos0[3] = {voxel_pos[end0][0],

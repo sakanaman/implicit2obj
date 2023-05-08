@@ -1,16 +1,23 @@
 #include "marching_cube.hpp"
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 int main()
 {
     double isovalue = 0.0;
-    double radius = 0.3;
-    mc::Vec3 gridsize{0.02, 0.02, 0.02};
-    mc::Vec3 origin{-1.0, -1.0, -1.0};
-    mc::iVec3 dim{100, 100, 100};
+    double radius = M_PI/4;
+    int n = 512;
+    double L = 2.0 * M_PI;
+    double h = L/n;
+    mc::Vec3 gridsize{h, h, h};
+    mc::Vec3 origin{-M_PI, -M_PI, -M_PI};
+    mc::iVec3 dim{n, n, n};
 
     auto imp = [&](double x, double y, double z)
     {
-        return x*x + y*y + z*z - radius*radius;
+        // return x*x + y*y + z*z - radius*radius;
+        return sin(x)*sin(y)*sin(z);
     };
 
     auto acc = [&](int i, int j, int k)
